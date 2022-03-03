@@ -13,7 +13,42 @@ api = tweepy.API(auth)
 
 
 statuses = api.home_timeline()
+# print(statuses)
+# for tweet in statuses:
+#     print(str(tweet.id) + '    ' + tweet.text + '   ' +tweet. )
 
-for tweet in statuses:
-    print(str(tweet.id) + '    ' + tweet.text)
+
+# print(get_home_timeline())
+
+
+print("_____________________________________________________________________________________")
+_user = api.get_user(screen_name = "Mitul_Chavda_")
+print("User details:")
+print(_user.name)
+print(_user.description)
+print(_user.location)
+
+print("Last 20 Followers:")
+for follower in _user.followers():
+    print(follower.name)
+print("_____________________________________________________________________________________")
+
+
+# tweet = api.get_user(screen_name="Mitul_Chavda_")
+# print("Most recent tweet: " + tweet.status.text)
+
+# api.update_profile(description="Bot that will reweet and like") # this will update the bio
+
+
+# tweets = api.home_timeline(count=1)
+# tweet = tweets[0]
+# print(f"Liking tweet {tweet.id} of {tweet.author.name}")
+# api.create_favorite(tweet.id)
+
+
+
+
+# for tweet in tweepy.Cursor(api.search, q='#python', rpp=100).items(100):
+#     print(f"{tweet.user.name} said: {tweet.text}")
+#     pass
 
